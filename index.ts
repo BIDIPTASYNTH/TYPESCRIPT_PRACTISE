@@ -5,7 +5,6 @@
 // Run the generated JavaScript file using Node.js:
 // node index.js
 
-
 //creating a type
 type User = {
   readonly _id: number;
@@ -13,6 +12,15 @@ type User = {
   roll_number: number;
   good: boolean;
 };
+//readonly means we cannot edit this field
+const user: User = {
+  _id: 1,
+  name: "Alice",
+  roll_number: 123,
+  good: true,
+};
+// Trying to change the _id property will result in a TypeScript error
+user._id = 2; // Error: Cannot assign to 'id' because it is a read-only property
 
 //creating object from previously defined type
 const u1: User = {
@@ -22,4 +30,41 @@ const u1: User = {
   good: true,
 };
 
-console.log(Object.keys(u1));
+//UNION TYPES
+type WindowState = "open" | "closed" | "minimized";
+let score : string, number =30;
+score = 50; //valid
+score =true; //invalid since no boolean type
+
+//CHECK
+let state: WindowState = "open";  // Valid
+state = "closed";  // Valid
+state = "not open";
+
+//example
+type name = {
+  username: string;
+  name: string;
+  roll_no: number;
+};
+
+const u1: name | { username: number; name: number } = {
+  username: 22,
+  name: "def",
+  roll_no: 500,
+};
+console.log(u1);
+
+
+//ARRAYS IN TS
+const superHero: string[]=[];
+const superHero: Array<string>=[];
+superHero.push("spiderman");
+superHero.push("superman");
+
+
+//INTERFACE 
+
+
+
+
