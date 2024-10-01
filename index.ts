@@ -64,6 +64,30 @@ superHero.push("superman");
 
 
 //INTERFACE 
+interface User {
+  name: string;
+  roll_no: number;
+  state: string;
+}
+const user1: User = { name: "abc", roll_no: 20, state: "assam" };
+user1.roll_no = 10;
+console.log(user1);
+
+//INTERFACE VS TYPE:
+//DEFINING
+interface Person {
+    name: string;
+    age: number;
+}
+
+type Person = {
+    name: string;
+    age: number;
+};
+//DEFFERENCE
+When to Use:
+Use interface when defining object structures or class contracts.
+Use type for unions, intersections, or complex types like string | number.
 
 
 
