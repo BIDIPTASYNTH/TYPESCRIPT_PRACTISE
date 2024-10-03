@@ -89,6 +89,28 @@ When to Use:
 Use interface when defining object structures or class contracts.
 Use type for unions, intersections, or complex types like string | number.
 
+//CLASS
+class Product {
+  private name: string;
+  private age: number;
+  constructor(x: string, y: number) {
+    this.name = x;
+    this.age = y;
+  }
+  displayInfo() {
+    console.log(`Name is ${this.name} and age is ${this.age}`);
+  }
+}
+
+const p1 = new Product("shirt", 4000);
+//p1.age = 20; // error because age is private memeber of the class
+p1.displayInfo();
+const p2 = new Product("trouser", 1500);
+p2.displayInfo();
+const p3 = new Product("tshirt", 2500);
+p3.displayInfo();
+
+  
 
 
 
